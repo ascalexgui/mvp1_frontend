@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>MVP - Andreia Souza Carvalho</title>
+</head>
+
+<body> 
+    <div id="containerPrincipal">
+	
+        <div id="containerBanner">
+                 <img src="img/BannerPrincipal.png">
+
+        </div>
+
+            
+        <!-- Tabela com items existentes -->
+        <div id="containerDespesa">
+
+                <p><strong> Adicionar uma nova despesa</strong></p>
+
+                <!-- Opções para adicionar uma nova despesa -->
+                <div class="newInputDespesa">
+                    <input type="text" id="newDespesa" placeholder="Adicionar nova Despesa:">
+                    <input type="text" id="newQuantidade" placeholder="Quantidade:">
+                    <input type="text" id="newValor" placeholder="Valor:">
+                    <span onclick="newDespesa()" class="addBtn">Adicionar</span>
+                </div>
+
+                <p></p>
+                <p><strong> Lista de despesas cadastradas</strong></p>
+
+                <div class="divTabela"> 
+                    <table id="listaDespesa">
+                        <tr>
+                            <th class="newDespesa" width="40%">Despesa</th>
+                            <th width="10%">Quantidade</th>
+                            <th width="25%">Valor Unitário</th>
+                            <th width="25%">Valor Total</th>
+                            <th><img src="img/excluir.png" width="20px" height="20px"></th>
+                        </tr>  
+                    </table>
+                </div> 
+         </div>
+
+         <div id="containerPagantes">
+            <label for="idTotalConta"><strong>Valor Total Conta</strong></label>
+            <input type="text" id="idTotalConta" name="totalConta" readonly>
+            <p></p>
+            <label for="idPagante"><strong>Número Pagantes</strong></label>
+            <input type="number" id="idPagante" name="pagante" value="10" required oninput="atualizaResultado()">            
+         </div> 
+
+         <div id="containerResultado">
+            <label for="idResultado"><strong>Total por Pagante</strong></label>
+            <input type="text" id="idResultado" name="resultado" readonly>
+         </div>
+
+        <div id="containerBuscaDespesa">
+            <label for="idBuscaNome">Busca despesa pelo nome</label>
+            <input type="text" id="idBuscaNome" name="buscaNome"><button type="button" id="btnBusca" onclick="buscaNome()"><img src="img/busca.jpg" width="20px" height="20px"></button>
+            <p></p>
+            <label for="idValorDespesa">Valor total da despesa</label>                 
+            <input type="text" id="idvalorDespesa" placeholder="Valor despesa" readonly>
+        </div>
+
+        <div id="containerRodape"> 
+            Copyright © Andreia Souza Carvalho MVP 01 2023
+        </div> 
+    </div>  
+  
+    <script src="scripts.js"></script>
+</body> 
+
+</html>    
+
