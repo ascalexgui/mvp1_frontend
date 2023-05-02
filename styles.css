@@ -237,4 +237,6 @@ th{
 }
 
 
-
+.close{
+ 	cursor: pointer;
+}
