@@ -82,12 +82,12 @@ const getListaDespesa = async () => {
     for (i = 0; i < close.length; i++) {
       close[i].onclick = function () {
         let div = this.parentElement.parentElement;
-        const nomeItem    = div.getElementsByTagName('td')[0].innerHTML
-        const despesaDel  = parseInt(div.getElementsByTagName('td')[1].innerHTML) * parseFloat(div.getElementsByTagName('td')[2].innerHTML)
+        const nomeItem    = div.getElementsByTagName('td')[0].innerHTML;
+        const despesaDel  = parseInt(div.getElementsByTagName('td')[1].innerHTML) * parseFloat(div.getElementsByTagName('td')[2].innerHTML);
 
         if (confirm("Você tem certeza que deseja excluir a despesa " + nomeItem + " ?")) {
           // div.remove()
-          deleteItem(nomeItem, despesaDel,div)          
+          deleteItem(nomeItem, despesaDel,div);          
         }
       }
     }
@@ -197,12 +197,11 @@ const getListaDespesa = async () => {
         alert("Escreva o nome de uma despesa!");
       } 
       else {
-        alert(nomeDespesa) 
         buscaDespesa(nomeDespesa)      
       }
     }
     
- const buscaDespesa = (nomeDespesa) => {
+    const buscaDespesa = (nomeDespesa) => {
       let url = 'http://127.0.0.1:5000/despesa_por_nome?nome=' + nomeDespesa;
       fetch(url, {
         method: 'get'
@@ -216,4 +215,23 @@ const getListaDespesa = async () => {
         console.error('Error:', error);
       });
     } 
-  
+
+       /*
+    --------------------------------------------------------------------------------------
+    Função para atualizar a lista de despesas da tabela.
+    --------------------------------------------------------------------------------------
+  */
+    const atualizaLista = () => { 
+      clearTable();
+      getListaDespesa();            
+    }
+
+    function clearTable(){
+      var linhas = document.getElementById('listaDespesa').rows;
+      for (var i= linhas.length-1; i>0; i--){
+          document.getElementById('listaDespesa').deleteRow(i);
+      }
+    }
+   
+
+   

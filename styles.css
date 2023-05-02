@@ -42,6 +42,7 @@ height é altura */
 	color: white;	
 	float: right; 
 	position: relative;
+	font-size: 14pt;
 } 
 
 #containerResultado  {  	
@@ -94,7 +95,7 @@ p{
 
 .divTabela{
 	width:650px; 
-	height: 290px;	
+	height: 300px;	
 	max-height: 100%;
 	overflow-y: scroll;
 }
@@ -189,6 +190,13 @@ th{
 	width: 50%;
 }
 
+#idPagante,
+#idTotalConta {
+	padding: 5px;
+	font-size: 14pt;
+	width: 50%;
+}
+
 .addBtn {
 	margin: 0 15px;
     padding: 12px 10px 10px;
@@ -212,6 +220,15 @@ th{
     transition: 0.3s;
 	background-color: #252d52;
 	border-style: solid;
+	border-color: whitesmoke;	
+}
+
+#btnAtualizaLista{
+	margin: 0 15px;
+	cursor: pointer;
+    transition: 0.3s;
+	background-color: #252d52;
+	border-style: none;
 	border-color: whitesmoke;	
 }
 
